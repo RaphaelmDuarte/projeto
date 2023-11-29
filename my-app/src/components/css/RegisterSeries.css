@@ -1,0 +1,81 @@
+.background {
+    background-color: rgba(128, 0, 128, 0.351);
+}
+
+.headerRegSeries {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seasonsBuilder {
+    display: grid;
+    margin-right: 5px;
+}
+
+.epBuilder {
+    display: grid;
+    margin-right: 5px;
+}
+
+.addNewLine {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    width: 41%;
+}
+
+#fnbtReturn {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#registerSeries {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#addNewLine {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+#bodyRegSeries {
+    display: block;
+    justify-items: center;
+}
+
+#epBuilder {
+    display: flex;
+}
+
+#epBuilder input {
+    margin-top: 2px;
+}
+
+#registerSeries {
+    margin-right: 3px;
+}
+
+.register-series-temporadas {
+    display: flex;
+}
+
+.temporadas {
+    margin-left: 2px;
+}
+
+.episodio-label {
+    width: 40px;
+    text-align: center;
+
+}
+
+.episodio-input {
+    width: 40px;
+}

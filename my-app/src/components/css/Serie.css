@@ -1,0 +1,166 @@
+.background {
+    background-color: rgba(128, 0, 128, 0.351);
+}
+
+th,
+td {
+    border: 1px solid;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#back {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    user-select: none;
+}
+
+#headerSerie {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#headerSerie #serieMaster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid red;
+    margin: 3px;
+    padding: 5px;
+    font-size: 24px;
+    height: 70px;
+    width: 150px;
+    user-select: none;
+}
+
+#bodySeasons {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 4px;
+}
+
+#bodyEpisodes {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#seasonDiv {
+    align-items: center;
+    border: 2px solid red;
+    border-radius: 10px;
+    display: flex;
+    height: 50px;
+    margin: 2px;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    user-select: none;
+}
+
+#episodesDiv {
+    align-items: center;
+    border: 2px solid red;
+    border-radius: 15px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    margin: 4px;
+    text-align: center;
+    width: 15% !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    position: relative;
+    padding: 5px;
+    user-select: none;
+}
+
+.modal {
+    /* hide the modal by default */
+    position: absolute;
+    /* position it relative to the viewport */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* allow scrolling within the modal */
+    z-index: 9999;
+    /* set a high z-index value to make it appear above other content */
+}
+
+/* .modal-content {
+    display: flex;
+    background-color: #ff4b4b;
+    margin: 10% auto;
+    padding: 5px;
+    border: 1px solid #888;
+    width: fit-content;
+    justify-content: space-between;
+} */
+
+.modal-content {
+    display: flex;
+    background-color: #ff4b4b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 7px;
+    text-align: center;
+}
+
+.modal-content span {
+    cursor: pointer;
+    border: 2px solid black;
+    /*margin-top: 20px;
+    margin-bottom: 20px;*/
+    padding: 2px;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
+}
+
+.modal-content p {
+    margin: 5px;
+    width: 100%;
+}
+
+.modal-span {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-left: 2px;
+}
+
+.modal-episode-edit {
+    display: grid;
+}
+
+.modal-episode-edit button,label {
+    user-select: none;
+}
+
+.mdButton {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100px;
+}
+
+.alterButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

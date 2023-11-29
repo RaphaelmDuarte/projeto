@@ -1,0 +1,42 @@
+.lgn-full {
+    user-select: none;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(61, 254, 254);
+}
+
+.lgn-card {
+    display: grid;
+}
+
+.lgn-header {
+    display: flex;
+    justify-content: center;
+}
+
+.lgn-login {
+    margin-top: 2px;
+    display: grid;
+    justify-content: center;
+    user-select: none;
+}
+
+#btn-login {
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.lgn-email {
+    text-align: left;
+    user-select: none;
+    display: grid;
+}
+
+.lgn-password {
+    text-align: left;
+    user-select: none;
+    display: grid;
+}

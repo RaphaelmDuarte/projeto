@@ -1,0 +1,37 @@
+version: "3.5"
+services:
+  banco:
+    image: postgres
+    command: postgres -c shared_buffers=8000MB
+    environment:
+      - POSTGRES_DB=trackseries
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+    volumes:
+      - ./data/postgres:/var/lib/teste/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/1.sql
+    ports:
+      - "5000:5432"
+    networks:
+      trackseries:
+        ipv4_address: 197.170.0.2
+  
+  back:
+    image: raphaelmdx/projeto:back
+    depends_on:
+      - banco
+    ports:
+      - "8080:8000"
+    networks:
+      trackseries:
+        ipv4_address: 197.170.0.3
+
+networks:
+  trackseries:
+    name: trackseries
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 197.170.0.0/24

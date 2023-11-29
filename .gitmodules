@@ -1,6 +1,0 @@
-[submodule "Back"]
-	path = Back
-	url = https://github.com/RaphaelmDuarte/projeto
-[submodule "my-app"]
-	path = my-app
-	url = https://github.com/RaphaelmDuarte/projeto

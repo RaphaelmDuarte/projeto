@@ -1,0 +1,54 @@
+.rgs-full {
+    user-select: none;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(61, 254, 254);
+}
+
+.rgs-card {
+    display: grid;
+}
+
+.rgs-header {
+    display: flex;
+    justify-content: center;
+}
+
+.rgs-login {
+    margin-top: 2px;
+    display: grid;
+    justify-content: center;
+    user-select: none;
+}
+
+#btn-registro {
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    margin-top: 5px;
+}
+
+.rgs-registrar {
+    display: grid;
+    justify-items: center;
+}
+
+.rgs-nome {
+    text-align: left;
+    user-select: none;
+    display: grid;
+}
+
+.rgs-email {
+    text-align: left;
+    user-select: none;
+    display: grid;
+}
+
+.rgs-password {
+    text-align: left;
+    user-select: none;
+    display: grid;
+}
