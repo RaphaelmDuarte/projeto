@@ -1,7 +1,7 @@
 from fastapi import HTTPException
-from models.form.UserForm import UserForm
-from models.view.UserView import UserView
-from settings import CONECTION
+from src.models.form.UserForm import UserForm
+from src.models.view.UserView import UserView
+from src.settings import CONECTION
 import bcrypt
 
 connect = CONECTION

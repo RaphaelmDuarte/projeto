@@ -1,5 +1,5 @@
-from models.form.EpisodesForm import EpisodesForm
-from repository.EpisodesRepository import create_episodes, get_all_episodes, update_current_episode, update_episode_name
+from src.models.form.EpisodesForm import EpisodesForm
+from src.repository.EpisodesRepository import create_episodes, get_all_episodes, update_current_episode, update_episode_name
 
 async def createEpisodes(episodes: EpisodesForm):
     return await create_episodes(episodes)

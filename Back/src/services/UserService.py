@@ -1,8 +1,8 @@
-from models.form.UserForm import UserForm
-from models.view.JWTTokenView import JWTTokenView
-from models.view.UserView import UserView
-from repository.UserRepository import create_user, get_user
-from services.TokenService import token_generator
+from src.models.form.UserForm import UserForm
+from src.models.view.JWTTokenView import JWTTokenView
+from src.models.view.UserView import UserView
+from src.repository.UserRepository import create_user, get_user
+from src.services.TokenService import token_generator
 
 async def userCreate(user: UserForm):
     return await create_user(user)

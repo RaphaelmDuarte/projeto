@@ -1,6 +1,6 @@
-from models.form.EpisodesForm import EpisodesForm
-from models.view.EpisodesView import EpisodesView
-from settings import CONECTION
+from src.models.form.EpisodesForm import EpisodesForm
+from src.models.view.EpisodesView import EpisodesView
+from src.settings import CONECTION
 
 connect = CONECTION
 
