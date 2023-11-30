@@ -27,6 +27,15 @@ services:
       trackseries:
         ipv4_address: 197.170.0.3
 
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    networks:
+      trackseries:
+        ipv4_address: 197.170.0.4
+
 networks:
   trackseries:
     name: trackseries

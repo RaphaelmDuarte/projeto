@@ -3,7 +3,7 @@ from src.repository.EpisodesRepository import create_episodes, get_all_episodes,
 
 import logging 
 from logging.config import dictConfig
-from log_config import log_config
+from ..log_config import log_config
 
 dictConfig(log_config)
 logger = logging.getLogger('foo-logger')

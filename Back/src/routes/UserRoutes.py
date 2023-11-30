@@ -3,14 +3,23 @@ from src.models.form.UserForm import UserForm
 from src.services.UserService import userCreate, getUser
 import bcrypt
 
+import logging 
+from logging.config import dictConfig
+from ..log_config import log_config
+
 user = APIRouter(
     prefix='/user',
     tags=['user']
 )
 
+dictConfig(log_config)
+logger = logging.getLogger('foo-logger')
+
 @user.post('/', status_code=201)
 async def create(user: UserForm, response: Response):
     try:
+        print(user)
+        logger.info("Requisição de criação de usuário!")        
         salt = bcrypt.gensalt(rounds=12)
         cryptpassword = bcrypt.hashpw(user.password.encode('utf-8'), salt)
         internal_user = UserForm(name=user.name,
@@ -18,7 +27,7 @@ async def create(user: UserForm, response: Response):
                                 password=cryptpassword)
         return await userCreate(internal_user)
     except Exception as e:
-        print(e)
+        logger.error(f"Não foi possível criar o usuário: {str(e)}")
         response.status_code = status.HTTP_400_BAD_REQUEST
 
 @user.post('/login', status_code=200)
