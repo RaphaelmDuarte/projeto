@@ -1,4 +1,4 @@
-from settings import TOKEN_KEY, EXPIRATION
+from src.settings import TOKEN_KEY, EXPIRATION
 import jwt
 
 tokey = TOKEN_KEY

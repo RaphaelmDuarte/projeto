@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request
-from models.form.SeriesForm import SeriesForm
-from services.SeriesService import getAllSeries, createSeries
+from src.models.form.SeriesForm import SeriesForm
+from src.services.SeriesService import getAllSeries, createSeries
 
 series = APIRouter(
     prefix='/series',

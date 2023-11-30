@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from services.SeasonsService import getAllSeasons
+from src.services.SeasonsService import getAllSeasons
 
 season = APIRouter(
     prefix='/season',

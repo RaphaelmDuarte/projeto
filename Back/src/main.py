@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes.EpisodesRoutes import episodes
-from routes.SeasonRoutes import season
-from routes.SeriesRoutes import series
-from routes.UserRoutes import user
+from src.routes.EpisodesRoutes import episodes
+from src.routes.SeasonRoutes import season
+from src.routes.SeriesRoutes import series
+from src.routes.UserRoutes import user
 
 origins = ["*"]
 

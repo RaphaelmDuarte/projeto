@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from models.form.EpisodesForm import EpisodesForm
-from services.EpisodesService import createEpisodes, getAllEpisodes, updateCurrentEpisode, updateEpisodeName
+from src.models.form.EpisodesForm import EpisodesForm
+from src.services.EpisodesService import createEpisodes, getAllEpisodes, updateCurrentEpisode, updateEpisodeName
 
 episodes = APIRouter(
     prefix='/episodes',

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Response, status
-from models.form.UserForm import UserForm
-from services.UserService import userCreate, getUser
+from src.models.form.UserForm import UserForm
+from src.services.UserService import userCreate, getUser
 import bcrypt
 
 user = APIRouter(
