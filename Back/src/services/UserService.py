@@ -1,9 +1,10 @@
-from src.models.form.UserForm import UserForm
-from src.models.view.JWTTokenView import JWTTokenView
-from src.models.view.UserView import UserView
-from src.repository.UserRepository import create_user, get_user
-from src.services.TokenService import token_generator
-from src.mensageria.sender import sender_post
+from models.form.UserForm import UserForm
+from models.view.JWTTokenView import JWTTokenView
+from models.view.UserView import UserView
+from repository.UserRepository import get_user
+from services.TokenService import token_generator
+from mensageria.sender import sender_post
+from mensageria.reciever import receiver
 
 import logging, json
 from logging.config import dictConfig
@@ -18,15 +19,18 @@ async def userCreate(user: UserForm):
         form = json.dumps(user.__dict__, indent=2)
         json_form = json.loads(form)
         json_form["type"] = "create_user"
-        return await sender_post(json_form)
+        await sender_post(json_form)
+        await receiver()
+        return 'Success'
     except Exception as e:
         print(e)
 
 async def getUser(user: UserForm):
     try:
+        logger.info("Serviço de autenticação de usuário!")
         internal_user: UserView = await get_user(user)
         tok = await token_generator(internal_user.name, internal_user.id)
         return JWTTokenView(token=tok, userId=internal_user.id)
     except Exception as e:
-        print(e)
-        raise Exception("Authentication Failed!")
+        logger.error(f"Erro no serviço de autenticação: {str(e)}")
+        raise Exception("Falha na autenticação!")

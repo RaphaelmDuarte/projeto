@@ -1,6 +1,6 @@
-from src.models.form.SeriesForm import SeriesForm
-from src.models.view.SeriesView import SeriesView
-from src.settings import CONECTION
+from models.form.SeriesForm import SeriesForm
+from models.view.SeriesView import SeriesView
+from settings import CONECTION
 
 connect = CONECTION
 

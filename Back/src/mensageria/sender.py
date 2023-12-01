@@ -10,7 +10,7 @@ logger = logging.getLogger('foo-logger')
 
 async def sender_post(form: json):
     try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', port="5672"))
+        connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq'))
         channel = connection.channel()
         channel.queue_declare(queue='post')
 

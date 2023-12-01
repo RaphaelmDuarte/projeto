@@ -1,6 +1,6 @@
-from src.models.form.SeasonForm import SeasonForm
-from src.models.view.SeasonView import SeasonView
-from src.settings import CONECTION
+from models.form.SeasonForm import SeasonForm
+from models.view.SeasonView import SeasonView
+from settings import CONECTION
 
 connect = CONECTION
 

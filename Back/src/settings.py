@@ -2,7 +2,7 @@ import psycopg2
 
 #configurações
 
-host= 'localhost'
+host= 'postgres'
 user= 'postgres'
 password= 'postgres'
 dbname= 'trackseries'

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Response, status
-from src.models.form.UserForm import UserForm
-from src.services.UserService import userCreate, getUser
+from models.form.UserForm import UserForm
+from services.UserService import userCreate, getUser
 import bcrypt
 
 import logging 
@@ -18,7 +18,6 @@ logger = logging.getLogger('foo-logger')
 @user.post('/', status_code=201)
 async def create(user: UserForm, response: Response):
     try:
-        print(user)
         logger.info("Requisição de criação de usuário!")        
         salt = bcrypt.gensalt(rounds=12)
         cryptpassword = bcrypt.hashpw(user.password.encode('utf-8'), salt)
@@ -33,7 +32,8 @@ async def create(user: UserForm, response: Response):
 @user.post('/login', status_code=200)
 async def authenticate(user: UserForm, response: Response):
     try:
+        logger.info("Authenticação de usuário!")
         return await getUser(user)
     except Exception as e:
-        print(e)
+        logger.error(f"Não foi possível autenticar: {str(e)}")
         response.status_code = status.HTTP_401_UNAUTHORIZED

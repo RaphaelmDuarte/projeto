@@ -1,5 +1,6 @@
 import pika, json
-from ..models.enum.type import Type
+from ..repository.UserRepository import create_user
+from src.models.form.UserForm import UserForm
 
 import logging 
 from logging.config import dictConfig
@@ -8,17 +9,26 @@ from ..log_config import log_config
 dictConfig(log_config)
 logger = logging.getLogger('foo-logger')
 
-def receiver():
+async def receiver():
     try:
         logger.info("Serviço de consumo de mensagem!")
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', port="5672"))
+        connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq'))
         channel = connection.channel()
 
         while True:
             method_frame, header_frame, body = channel.basic_get(queue='post',auto_ack=True)
             if method_frame:
-                type: Type = body.decode().type
-                body.pop("type", None)
-                type(body)
+                logger.info("Mensagem recebida, decodificando!")
+                json_string = body.decode()
+                json_form = json.loads(json_string)
+                type = json_form.get('type')
+                json_form.pop('type', None)
+                if type == "create_user":
+                    logger.info("Criação de Usuário!")
+                    await create_user(UserForm(**json_form))
+                    return 'Sucess'
+                
+
     except Exception as e:
-        logger.error(f"Erroao receber mensagem: {str(e)}")
+        logger.error(f"Erro ao receber mensagem: {str(e)}")
+        return 'Failed'

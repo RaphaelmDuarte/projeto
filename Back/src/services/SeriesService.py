@@ -1,18 +1,26 @@
-from src.models.form.EpisodesForm import EpisodesForm
-from src.models.form.SeasonForm import SeasonForm
-from src.models.form.SeriesForm import SeriesForm
-from src.models.view.SeasonView import SeasonView
-from src.models.view.SeriesView import SeriesView
-from src.repository.EpisodesRepository import create_episodes
-from src.repository.SeriesRepository import get_all_series, create_series
-from src.repository.SeasonRepository import create_season
-from src.services.TokenService import get_userId
+from models.form.EpisodesForm import EpisodesForm
+from models.form.SeasonForm import SeasonForm
+from models.form.SeriesForm import SeriesForm
+from models.view.SeasonView import SeasonView
+from models.view.SeriesView import SeriesView
+from repository.EpisodesRepository import create_episodes
+from repository.SeriesRepository import get_all_series, create_series
+from repository.SeasonRepository import create_season
+from services.TokenService import get_userId
+
+import logging 
+from logging.config import dictConfig
+from ..log_config import log_config
+
+dictConfig(log_config)
+logger = logging.getLogger('foo-logger')
 
 async def getAllSeries(token: str):
     userId: int = await get_userId(token)
     return await get_all_series(userId)
 
 async def createSeries(seriesForm: SeriesForm, token: str):
+    logger.info("Serviço de criação de série!")
     userid: int = await get_userId(token)
     savedSeries: SeriesView = await create_series(seriesForm, userid)
     for season in seriesForm.seasons:
