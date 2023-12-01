@@ -5,7 +5,7 @@ import bcrypt
 
 import logging 
 from logging.config import dictConfig
-from ..log_config import log_config
+from log_config import log_config
 
 user = APIRouter(
     prefix='/user',

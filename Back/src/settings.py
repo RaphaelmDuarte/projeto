@@ -2,11 +2,11 @@ import psycopg2
 
 #configurações
 
-host= 'postgres'
+host= '197.170.0.2'
 user= 'postgres'
 password= 'postgres'
 dbname= 'trackseries'
-port= '5000'
+port= '5432'
 
 DATABASE_URL = 'host={0} port={1} user={2} dbname={3} password={4}'.format(host , port, user, dbname, password)
 

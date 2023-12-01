@@ -1,6 +1,6 @@
 import pika, json
 from ..repository.UserRepository import create_user
-from src.models.form.UserForm import UserForm
+from models.form.UserForm import UserForm
 
 import logging 
 from logging.config import dictConfig

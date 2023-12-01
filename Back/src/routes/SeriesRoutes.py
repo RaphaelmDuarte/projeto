@@ -4,7 +4,7 @@ from services.SeriesService import getAllSeries, createSeries
 
 import logging 
 from logging.config import dictConfig
-from ..log_config import log_config
+from log_config import log_config
 
 series = APIRouter(
     prefix='/series',
