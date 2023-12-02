@@ -17,6 +17,7 @@ spec:
       containers:
         - name: "trackseries"
           image: raphaelmdx/projeto:back
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           env:

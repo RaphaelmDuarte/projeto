@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: postgres-config
 data:
-  POSTGRES_HOST: 'postgres'
+  POSTGRES_HOST: '192.168.100.56'
   POSTGRES_USER: postgres
   POSTGRES_PASS: postgres
   POSTGRES_DATABASE: trackseries
   POSTGRES_DRIVERNAME: postgresql+psycopg2
-  POSTGRES_PORT: '5432'
+  POSTGRES_PORT: '5000'

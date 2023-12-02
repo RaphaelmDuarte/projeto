@@ -17,24 +17,24 @@ services:
       trackseries:
         ipv4_address: 197.170.0.2
   
-  back:
-    image: raphaelmdx/projeto:back
-    depends_on:
-      - banco
-    ports:
-      - "8080:8000"
-    networks:
-      trackseries:
-        ipv4_address: 197.170.0.3
+  # back:
+  #   image: raphaelmdx/projeto:back
+  #   depends_on:
+  #     - banco
+  #   ports:
+  #     - "8080:8000"
+  #   networks:
+  #     trackseries:
+  #       ipv4_address: 197.170.0.3
 
-  rabbitmq:
-    image: "rabbitmq:3-management"
-    ports:
-      - "15672:15672"
-      - "5672:5672"
-    networks:
-      trackseries:
-        ipv4_address: 197.170.0.4
+  # rabbitmq:
+  #   image: "rabbitmq:3-management"
+  #   ports:
+  #     - "15672:15672"
+  #     - "5672:5672"
+  #   networks:
+  #     trackseries:
+  #       ipv4_address: 197.170.0.4
 
 networks:
   trackseries:

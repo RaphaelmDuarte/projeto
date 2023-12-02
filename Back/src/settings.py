@@ -1,12 +1,13 @@
 import psycopg2
+import os
 
 #configurações
 
-host= '197.170.0.2'
-user= 'postgres'
-password= 'postgres'
-dbname= 'trackseries'
-port= '5432'
+host= os.getenv('POSTGRES_HOST')
+user= os.getenv('POSTGRES_USER')
+password= os.getenv('POSTGRES_PASS')
+dbname= os.getenv('POSTGRES_DATABASE')
+port= os.getenv('POSTGRES_PORT')
 
 DATABASE_URL = 'host={0} port={1} user={2} dbname={3} password={4}'.format(host , port, user, dbname, password)
 
